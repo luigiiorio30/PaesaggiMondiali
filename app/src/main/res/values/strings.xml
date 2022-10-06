@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Paesaggi Mondiali</string>
+    <string name="paesaggio1">Paestum</string>
+    <string name="paesaggio2">Costiera Amalfi</string>
+    <string name="paesaggio3">Colline del Monferrato</string>
+    <string name="paesaggio4">Gran Canyon</string>
+</resources>
