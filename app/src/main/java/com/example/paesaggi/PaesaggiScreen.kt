@@ -1,5 +1,7 @@
 package com.example.paesaggi
+import android.icu.text.CaseMap.Title
 import android.provider.ContactsContract.Data
+import androidx.annotation.StringRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -30,6 +32,12 @@ import com.example.paesaggi.ui.theme.PaesaggiTheme
 import kotlinx.coroutines.launch
 import kotlin.math.round
 
+enum class PaesaggiScreen(@StringRes val  title: Int){
+    Start(title = R.string.app_name),
+    Search(title = R.string.search),
+    About(title = R.string.about)
+}
+
 @Composable
 fun PaesaggiApp() {
   Scaffold (
@@ -43,17 +51,24 @@ fun PaesaggiApp() {
 }
 
 @Composable
-fun TopBar(){
-    Row(modifier = Modifier
-        .fillMaxWidth()
-    ) {
-        Text(
-            text = stringResource(R.string.app_name),
-            style = MaterialTheme.typography.h1,
-            fontSize = 30.sp,
-            modifier = Modifier.width(450.dp),
-            textAlign = TextAlign.Center
-        )
+fun TopBar() {
+    TopAppBar(
+        modifier = Modifier.fillMaxWidth(),
+        backgroundColor = MaterialTheme.colors.primary ,
+    ){
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+        ) {
+            Text(
+                text = stringResource(R.string.app_name),
+                style = MaterialTheme.typography.h1,
+                fontSize = 30.sp,
+                modifier = Modifier.width(450.dp),
+                textAlign = TextAlign.Center
+            )
+        }
     }
 }
 
@@ -73,12 +88,12 @@ fun BottomNavigationWithSelected() {
         items.forEachIndexed { index, item ->
             BottomNavigationItem(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .background(
+                    .fillMaxWidth(),
+                    /*.background(
                         color = MaterialTheme.colors.primary,
-                        shape = RoundedCornerShape(topStart = 700.dp, topEnd = 700.dp
+                        shape = RoundedCornerShape(topStart = 50.dp, topEnd = 50.dp
                         )
-                    ),
+                    ),*/
                 icon = { Icon(icons[index], contentDescription = item) },
                 label = { Text(item) },
                 selected = selectedItem == index,

@@ -2,8 +2,7 @@ package com.example.paesaggi
 
 import android.graphics.drawable.shapes.Shape
 import androidx.compose.animation.animateContentSize
-import androidx.compose.animation.core.LinearOutSlowInEasing
-import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -44,9 +43,9 @@ fun PaesaggiCard(paesaggi: Paesaggi, modifier: Modifier = Modifier) {
     Card(modifier = Modifier
         .fillMaxWidth()
         .animateContentSize(
-            animationSpec = tween(
-                delayMillis = 300,
-                easing = LinearOutSlowInEasing
+            animationSpec = spring(
+                dampingRatio = Spring.DampingRatioMediumBouncy,
+                stiffness = Spring.StiffnessLow
             )
         )
         .padding(8.dp),

@@ -12,8 +12,22 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.example.paesaggi.R
 import com.example.paesaggi.model.Paesaggi
+import com.example.paesaggi.model.Screen
 
 object Datasource {
+
+    val loadScreen = listOf<Screen>(
+        Screen(
+            TitleWindow = R.string.app_name
+        ),
+        Screen(
+            TitleWindow = R.string.search
+        ),
+        Screen(
+            TitleWindow = R.string.about
+        ),
+    )
+
     val loadPaesaggi = listOf<Paesaggi>(
         Paesaggi(
             Title = R.string.paesaggio1,
