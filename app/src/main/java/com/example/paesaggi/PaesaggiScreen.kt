@@ -54,11 +54,7 @@ fun PaesaggiApp() {
 fun TopBar() {
     TopAppBar(
         modifier = Modifier
-            .graphicsLayer {
-                shape = RoundedCornerShape(topStart = 400.dp, topEnd = 400.dp)
-                clip = true
-            }
-        .fillMaxWidth(),
+          .fillMaxWidth(),
         backgroundColor = MaterialTheme.colors.primary,
     ){
 
@@ -86,7 +82,7 @@ fun BottomNavigationWithSelected() {
     BottomAppBar (
         modifier = Modifier
             .graphicsLayer {
-                shape = RoundedCornerShape(topStart = 400.dp, topEnd = 400.dp)
+                shape = RoundedCornerShape(topStart = 200.dp, topEnd = 200.dp)
                 clip = true
             },
             backgroundColor = MaterialTheme.colors.primary,
