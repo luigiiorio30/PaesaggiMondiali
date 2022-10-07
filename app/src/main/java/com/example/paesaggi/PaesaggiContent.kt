@@ -48,7 +48,7 @@ fun PaesaggiCard(paesaggi: Paesaggi, modifier: Modifier = Modifier) {
                 stiffness = Spring.StiffnessLow
             )
         )
-        .padding(8.dp),
+        .padding(20.dp),
         onClick = { expandState=!expandState },
         elevation = 4.dp,
         shape = Shapes.medium,

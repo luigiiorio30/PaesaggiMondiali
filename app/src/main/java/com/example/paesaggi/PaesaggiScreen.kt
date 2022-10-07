@@ -53,8 +53,13 @@ fun PaesaggiApp() {
 @Composable
 fun TopBar() {
     TopAppBar(
-        modifier = Modifier.fillMaxWidth(),
-        backgroundColor = MaterialTheme.colors.primary ,
+        modifier = Modifier
+            .graphicsLayer {
+                shape = RoundedCornerShape(topStart = 400.dp, topEnd = 400.dp)
+                clip = true
+            }
+        .fillMaxWidth(),
+        backgroundColor = MaterialTheme.colors.primary,
     ){
 
         Row(
@@ -78,22 +83,19 @@ fun BottomNavigationWithSelected() {
     val items = listOf("Home", "Search", "About")
     val icons = listOf(Icons.Filled.Home, Icons.Filled.Search, Icons.Filled.Person)
 
-    BottomNavigation (
+    BottomAppBar (
         modifier = Modifier
             .graphicsLayer {
                 shape = RoundedCornerShape(topStart = 400.dp, topEnd = 400.dp)
                 clip = true
-            }
+            },
+            backgroundColor = MaterialTheme.colors.primary,
+
     ){
         items.forEachIndexed { index, item ->
             BottomNavigationItem(
                 modifier = Modifier
                     .fillMaxWidth(),
-                    /*.background(
-                        color = MaterialTheme.colors.primary,
-                        shape = RoundedCornerShape(topStart = 50.dp, topEnd = 50.dp
-                        )
-                    ),*/
                 icon = { Icon(icons[index], contentDescription = item) },
                 label = { Text(item) },
                 selected = selectedItem == index,

@@ -52,5 +52,11 @@ object Datasource {
             Image = R.drawable.canyon,
             Description= "Prova"
         ),
+
+        Paesaggi(
+            Title = R.string.paesaggio5,
+            Image = R.drawable.vele,
+            Description= "Prova"
+        ),
     )
 }
