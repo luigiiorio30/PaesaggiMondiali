@@ -41,13 +41,13 @@ enum class PaesaggiScreen(@StringRes val  title: Int){
 @Composable
 fun PaesaggiApp() {
   Scaffold (
+
       topBar = { TopBar() },
-      bottomBar = {
-          BottomNavigationWithSelected()
-      }
-          ){
-      PaesaggiList()
-      AboutMe()
+      bottomBar = { BottomNavigationWithSelected() }
+
+  ){
+  //    PaesaggiList()
+      AboutList()
   }
 }
 
