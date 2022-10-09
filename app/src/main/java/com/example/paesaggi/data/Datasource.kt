@@ -1,16 +1,7 @@
 package com.example.paesaggi.data
 
-import android.media.audiofx.AudioEffect.Descriptor
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.graphics.vector.ImageVector
 import com.example.paesaggi.R
+import com.example.paesaggi.model.About
 import com.example.paesaggi.model.Paesaggi
 import com.example.paesaggi.model.Screen
 
@@ -59,4 +50,21 @@ object Datasource {
             Description= "Prova"
         ),
     )
+
+    val loadAbout = listOf<About>(
+        About(
+            Name = R.string.person1,
+            Img = R.drawable.photo_2022_10_09_12_06_57,
+            AboutText= "Prova"
+        ),
+
+        About(
+            Name = R.string.person2,
+            Img = R.drawable.photo_2022_10_09_12_06_57,
+            AboutText= "Prova"
+        ),
+    )
 }
+
+
+
